@@ -4,6 +4,10 @@
       box-sizing: border-box;
 }
 
+.body {
+      background-color: black;
+}
+
 header {
       margin: auto;
       width: 70%;
@@ -41,4 +45,18 @@ main {
 
 .form-check>label {
       margin-right: 0.5rem;
+}
+
+.failed {
+      width: 500px;
+      padding: 1rem 0;
+      border-radius: 0.7rem;
+      background-color: rgba(255, 0, 0, 0.315);
+}
+
+.success {
+      width: 500px;
+      padding: 1rem 0;
+      border-radius: 0.7rem;
+      background-color: rgba(0, 255, 42, 0.315);
 }

@@ -2,43 +2,27 @@
 
 function generatePassword($length, $chars, $numbers, $symbol, $repeat)
 {
-      var_dump($length);
       if ($length < 8 || $length > 25 || is_null($length) == true) {
             return null;
       } else {
             if (isset($chars)) {
-                  $charsBox = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-            } else {
-                  $charsBox = '';
-            };
-
+                  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            }
             if (isset($numbers)) {
-                  $numbersBox = '0123456789';
-            } else {
-                  $numbersBox = '';
-            };
-
+                  $numbers = "0123456789";
+            }
             if (isset($symbol)) {
-                  $symbolBox = '-_.:,;§°ç{})(/&$£^+[]';
-            } else {
-                  $symbolBox = '';
-            };
+                  $symbol = "!@#$%^&*";
+            }
 
-            $password = $charsBox . $symbolBox . $numbersBox;
+            $password = $chars . $numbers . $symbol;
 
             if ($repeat == "yes") {
-
                   $reapeatChars = "";
-
                   for ($i = 0; $i < $length; $i++) {
-                        $appoggio = $password[rand(0, strlen($password) - 1)];
-                        if (str_contains($password, $appoggio)) {
-                              $i--;
-                        } else {
-                              $reapeatChars .= $appoggio;
-                        }
+                        /* $reapeatChars = $reapeatChars . $password[rand(0, strlen($password) - 1)]; */
+                        $reapeatChars .= substr(str_shuffle($password), 0, 1);
                   }
-
                   return $reapeatChars;
             } else {
                   return substr(str_shuffle($password), 0, $length);

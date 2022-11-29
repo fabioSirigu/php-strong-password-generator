@@ -12,17 +12,17 @@ $password = generatePassword($_GET['pswLength'], $_GET['chars'], $_GET['numbers'
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
       <!-- BOOTSTRAP -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
       <!-- CSS -->
       <link rel="stylesheet" href="./assets/css/style.css">
-      <title>Document</title>
 </head>
 
-<body>
+<body class="body">
       <header class="text-center my-4">
             <h1><strong>Strong Password Generator</strong></h1>
-            <p>Genera una password sicura</p>
+            <h2>Genera una password sicura</h2>
       </header>
       <main>
             <div class="container text-center my-4">
@@ -48,6 +48,7 @@ $password = generatePassword($_GET['pswLength'], $_GET['chars'], $_GET['numbers'
 
                               </div>
                               <div class="px-5 py-3">
+                                    <h4>Scegli cosa deve contenere la tua password:</h4>
                                     <div class="checkbox mt-3">
                                           <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="chars" id="chars">
@@ -67,12 +68,12 @@ $password = generatePassword($_GET['pswLength'], $_GET['chars'], $_GET['numbers'
                         <button type="submit" class="btn btn-primary">Genera</button>
                   </form>
             </div>
-            <div class="password text-center">
+            <div class="password text-center d-flex flex-column align-items-center">
                   <h2>La tua password</h2>
                   <?php if (is_null($password)) : ?>
-                        <h3><strong>Inserisci un valore!</strong></h3>
+                        <h3 class="failed"><strong>Inserisci un valore da 8 a 25!</strong></h3>
                   <?php else : ?>
-                        <h3><strong><?= $password ?></strong></h3>
+                        <h3 class="success"><strong><?= $password ?></strong></h3>
                   <?php endif ?>
             </div>
 
