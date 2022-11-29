@@ -7,7 +7,7 @@ function generatePassword($length, $chars, $numbers, $symbol, $repeat)
             return null;
       } else {
             if (isset($chars)) {
-                  $charsBox = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+                  $charsBox = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
             } else {
                   $charsBox = '';
             };
@@ -31,7 +31,12 @@ function generatePassword($length, $chars, $numbers, $symbol, $repeat)
                   $reapeatChars = "";
 
                   for ($i = 0; $i < $length; $i++) {
-                        $reapeatChars .= $password[rand(0, strlen($password) - 1)];
+                        $appoggio = $password[rand(0, strlen($password) - 1)];
+                        if (str_contains($password, $appoggio)) {
+                              $i--;
+                        } else {
+                              $reapeatChars .= $appoggio;
+                        }
                   }
 
                   return $reapeatChars;
