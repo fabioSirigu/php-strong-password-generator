@@ -31,35 +31,36 @@ $password = generatePassword($_GET['pswLength'], $_GET['chars'], $_GET['numbers'
                               <label for="pswLength">Insersci la lunghezza della password desiderata</label>
                               <input type="text" name="pswLength" id="pswLength" class="form-control mx-2">
                         </div>
-                        <div class="mb-3 d-flex justify-content-between px-5">
-                              <h4>Consenti ripetizioni di uno o più caratteri:</h4>
-                              <div>
+                        <div>
+                              <div class="mb-3 px-5">
+                                    <h4>Consenti ripetizioni di uno o più caratteri:</h4>
+                                    <div>
+                                          <input class="form-check-input" type="radio" name="repeat" value="yes" id="repeat" <?php if (isset($_GET['repeat']) && $_GET['repeat'] == 'yes') : ?>checked='checked' <?php endif; ?>>
+                                          <label class="form-check-label" for="yrepeat">
+                                                Sì
+                                          </label>
 
-                                    <input class="form-check-input" type="radio" name="repeat" value="yes" id="repeat" <?php if (isset($_GET['repeat']) && $_GET['repeat'] == 'yes') : ?>checked='checked' <?php endif; ?>>
-                                    <label class="form-check-label" for="yrepeat">
-                                          Sì
-                                    </label>
+                                          <input class="form-check-input" type="radio" name="repeat" value="no" id="repeat" <?php if (isset($_GET['repeat']) && $_GET['repeat'] == 'no') : ?>checked='checked' <?php endif; ?>>
+                                          <label class="form-check-label" for="nrepeat">
+                                                No
+                                          </label>
+                                    </div>
 
-                                    <input class="form-check-input" type="radio" name="repeat" value="no" id="repeat" <?php if (isset($_GET['repeat']) && $_GET['repeat'] == 'no') : ?>checked='checked' <?php endif; ?>>
-                                    <label class="form-check-label" for="nrepeat">
-                                          No
-                                    </label>
                               </div>
-
-                        </div>
-                        <div class="px-5 py-3">
-                              <div class="checkbox mt-3">
-                                    <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" name="chars" id="chars">
-                                          <label class="form-check-label" for="chars">Lettere</label>
-                                    </div>
-                                    <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
-                                          <label class="form-check-label" for="numbers">Numeri</label>
-                                    </div>
-                                    <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" name="symbol" id="symbol">
-                                          <label class="form-check-label" for="symbol">Simboli</label>
+                              <div class="px-5 py-3">
+                                    <div class="checkbox mt-3">
+                                          <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="chars" id="chars">
+                                                <label class="form-check-label" for="chars">Lettere</label>
+                                          </div>
+                                          <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
+                                                <label class="form-check-label" for="numbers">Numeri</label>
+                                          </div>
+                                          <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="symbol" id="symbol">
+                                                <label class="form-check-label" for="symbol">Simboli</label>
+                                          </div>
                                     </div>
                               </div>
                         </div>

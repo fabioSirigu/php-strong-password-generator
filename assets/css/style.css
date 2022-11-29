@@ -33,3 +33,12 @@ main {
       width: 250px;
       padding-bottom: 2rem;
 }
+
+.checkbox {
+      display: flex;
+      justify-content: center;
+}
+
+.form-check>label {
+      margin-right: 0.5rem;
+}

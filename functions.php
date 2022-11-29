@@ -3,7 +3,7 @@
 function generatePassword($length, $chars, $numbers, $symbol, $repeat)
 {
       var_dump($length);
-      if ($length < 1 || is_null($length) == true) {
+      if ($length < 8 || $length > 25 || is_null($length) == true) {
             return null;
       } else {
             if (isset($chars)) {
